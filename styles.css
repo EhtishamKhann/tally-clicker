@@ -1,0 +1,321 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Dark Theme */
+  .dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+  }
+  
+  /* Ad Space at the Top */
+  .ad-space-top {
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Navigation Bar */
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #555;
+    padding: 10px;
+  }
+  
+  nav button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  nav button:hover {
+    background-color: #666;
+  }
+  
+  /* Main Content */
+  .container {
+    margin-top: 20px;
+  }
+  
+  .counter {
+    font-size: 15rem;
+    margin: 20px 0;
+  }
+  
+  /* Side Buttons */
+  .side-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 20px 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #555;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .side-button:hover {
+    background-color: #444;
+  }
+  
+  .left {
+    left: 20px;
+  }
+  
+  .right {
+    right: 20px;
+  }
+
+ /* styles.css */
+/* ... (previous styles) ... */
+
+/* Ad Space at the Bottom */
+.ad-space-bottom {
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set a fixed height for the ad section */
+    z-index: 1; /* Ensure the ad section stays at the bottom */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* styles.css */
+/* ... (previous styles) ... */
+
+/* History Panel */
+.history-panel {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Hidden by default */
+    width: 400px;
+    height: 100%;
+    background-color: #444;
+    color: white;
+    transition: right 0.3s;
+    overflow-y: auto; /* Add scrollbar for overflow */
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  .history-panel.open {
+    right: 0; /* Show the panel */
+  }
+  
+  /* History Panel Header */
+  .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #555;
+    position: sticky;
+    top: 0;
+    z-index: 2; /* Ensure the header stays above the history list */
+  }
+  
+  .history-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .history-header div {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+  }
+  
+  /* Clear History Button */
+  .clear-history-button {
+    background: none;
+    border: 2px solid #ff4444;
+    color: #ff4444;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .clear-history-button:hover {
+    background-color: #ff4444;
+    color: white;
+  }
+  
+  /* Close History Button */
+  .close-history-button {
+    background: none;
+    border: 2px solid #ccc;
+    color: #ccc;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .close-history-button:hover {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  /* History List */
+  #history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: calc(100vh - 100px); /* Adjust height for scrolling */
+    overflow-y: auto; /* Add scrollbar for overflow */
+  }
+  
+  #history-list li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #666;
+  }
+
+  /* styles.css */
+/* ... (previous styles) ... */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust container padding */
+    .container {
+      margin-top: 20px;
+    }
+  
+    /* Adjust counter font size */
+    .counter {
+      font-size: 2rem;
+    }
+  
+    /* Adjust side buttons */
+    .side-button {
+      font-size: 1.5rem;
+      padding: 15px 25px;
+    }
+  
+    .left {
+      left: 10px;
+    }
+  
+    .right {
+      right: 10px;
+    }
+  
+    /* Adjust history panel width */
+    .history-panel {
+      width: 100%; /* Full width on small screens */
+      right: -100%; /* Hidden by default */
+    }
+  
+    .history-panel.open {
+      right: 0; /* Show the panel */
+    }
+  
+    /* Adjust history header */
+    .history-header {
+      padding: 10px;
+    }
+  
+    .history-header h2 {
+      font-size: 1.2rem;
+    }
+  
+    .clear-history-button,
+    .close-history-button {
+      font-size: 0.9rem;
+      padding: 4px 8px;
+    }
+  
+    /* Adjust ad section */
+    .ad-space-top,
+    .ad-space-bottom {
+      padding: 5px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  
+  @media (max-width: 480px) and (min-width:360px ) {
+    /* Adjust counter font size */
+    .counter {
+        margin-top: 30%;
+      font-size: 12rem;
+      
+    }
+  
+    /* Adjust side buttons */
+    .side-button {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+    }
+  
+    /* Adjust history header */
+    .history-header h2 {
+      font-size: 1rem;
+    }
+  
+    .clear-history-button,
+    .close-history-button {
+      font-size: 0.8rem;
+      padding: 3px 6px;
+    }
+  
+    /* Adjust ad section */
+    .ad-space-top,
+    .ad-space-bottom {
+      padding: 5px;
+      font-size: 0.8rem;
+    }
+  }
+  @media (max-width: 1100px) and (min-width:500px ) {
+    /* Adjust counter font size */
+    .counter {
+        margin-top: 35%;
+      font-size: 18rem;
+      
+    }
+  
+    /* Adjust side buttons */
+    .side-button {
+      font-size: 5rem;
+      padding: 20px 40px;
+    }
+  
+    /* Adjust history header */
+    .history-header h2 {
+      font-size: 1rem;
+    }
+  
+    .clear-history-button,
+    .close-history-button {
+      font-size: 0.8rem;
+      padding: 3px 6px;
+    }
+  
+    /* Adjust ad section */
+    .ad-space-top,
+    .ad-space-bottom {
+      padding: 5px;
+      font-size: 0.8rem;
+    }
+  }
